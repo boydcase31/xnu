@@ -95,7 +95,8 @@ void PE_init_platform(boolean_t vm_initialized, void * _args)
         PE_init_SocSupport();
 
         /* Reset kputc. */
-        PE_kputc = gPESocDispatch.uart_putc;
+        /* bad choice for a working serial KDP */
+        //PE_kputc = gPESocDispatch.uart_putc;
 
         /* XXX: Real iOS kernel does iBoot/debug-enabled init after the DTInit call. */
         if( kSuccess == DTLookupEntry(NULL, "/chosen", &entry)) {

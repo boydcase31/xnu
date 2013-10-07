@@ -1241,7 +1241,9 @@ dlil_init(void)
 	 * Create and start up the main DLIL input thread and the interface
 	 * detacher threads once everything is initialized.
 	 */
-	dlil_create_input_thread(NULL, dlil_main_input_thread);
+	//dlil_create_input_thread(NULL, dlil_main_input_thread);
+  /* TODO: this is creating a corrupted thread for me(geohot) */
+  /* commented out until this can be investigated */
 
 	if (kernel_thread_start(ifnet_detacher_thread_func,
 	    NULL, &thread) != KERN_SUCCESS) {

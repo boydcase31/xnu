@@ -323,7 +323,7 @@ kdp_sync_cache(void)
 void
 kdp_call(void)
 {
-    
+  __builtin_trap();
 }
 
 static struct kdp_callout {

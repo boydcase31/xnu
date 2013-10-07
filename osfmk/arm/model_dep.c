@@ -579,11 +579,11 @@ void machine_startup(void)
      * any further if the proper option bit was specified in
      * the boot flags.
      */
-     if (halt_in_debugger) {
+     /*if (halt_in_debugger) {
         Debugger("inline call to debugger(machine_startup)");
         halt_in_debugger = 0;
         active_debugger =1;
-    }
+    }*/
 
 
     kernel_bootstrap();
